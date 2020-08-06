@@ -22,9 +22,17 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  
-
   passwordText.value = password;
+
+  function generatePassword(){
+    lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
+    for (var i = 1; i < pwLength; i++){
+      password += lowerCaseChar.charAt(Math.floor(Math.random()*lowerCaseChar.length + 1))
+      
+    }return password
+
+  }
+  
 
 }
 
