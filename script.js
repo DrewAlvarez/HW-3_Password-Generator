@@ -42,13 +42,77 @@ function writePassword() {
     
     var password ="";
     for (var i = 1; i <= pwLength; i++){
-      if(pwLowercase==true && pwUppercase!==true && pwNumbers!==true && pwSpecialChar!== true){
+      //for lowercase only
+      if(pwLowercase==true && pwUppercase!==true && pwNumbers!==true && pwSpecialChar!==true){
         password += lowerCaseChar.charAt(Math.floor(Math.random()*lowerCaseChar.length + 1))
 
-      }else if((pwLowercase!==true && pwUppercase==true && pwNumbers!==true && pwSpecialChar!== true)){
+      }
+      //for uppercase only
+      else if((pwLowercase!==true && pwUppercase==true && pwNumbers!==true && pwSpecialChar!==true)){
         password += upperCaseChar.charAt(Math.floor(Math.random()*upperCaseChar.length + 1))
 
       }
+      //for numeric only
+      else if((pwLowercase!==true && pwUppercase==!true && pwNumbers==true && pwSpecialChar!==true)){
+        password += numericChar.charAt(Math.floor(Math.random()*numericChar.length + 1))
+
+      }
+      //for special characters only
+      else if((pwLowercase!==true && pwUppercase==!true && pwNumbers!==true && pwSpecialChar==true)){
+        password += specialChar.charAt(Math.floor(Math.random()*specialChar.length + 1))
+
+      }
+      //for lower and upper case only
+      else if((pwLowercase==true && pwUppercase==true && pwNumbers!==true && pwSpecialChar!==true)){
+        password += lowerUpper.charAt(Math.floor(Math.random()*lowerUpper.length + 1))
+
+      }
+      //for lowercase and numeric only
+      else if((pwLowercase==true && pwUppercase!==true && pwNumbers==true && pwSpecialChar!==true)){
+        password += lowerNum.charAt(Math.floor(Math.random()*lowerNum.length + 1))
+
+      }
+      //for lowercase and special characters only
+      else if((pwLowercase==true && pwUppercase==!true && pwNumbers!==true && pwSpecialChar==true)){
+        password += lowerSpecial.charAt(Math.floor(Math.random()*lowerSpecial.length + 1))
+
+      }
+      //for uppercase and numeric only
+      else if((pwLowercase!==true && pwUppercase==true && pwNumbers==true && pwSpecialChar!==true)){
+        password += upperNum.charAt(Math.floor(Math.random()*upperNum.length + 1))
+
+      }
+      //for uppercase and special characters only
+      else if((pwLowercase!==true && pwUppercase==true && pwNumbers!==true && pwSpecialChar== true)){
+        password += upperSpecial.charAt(Math.floor(Math.random()*upperSpecial.length + 1))
+
+      }
+      //for numeric and special characters only
+      else if((pwLowercase!==true && pwUppercase==!true && pwNumbers==true && pwSpecialChar==true)){
+        password += numSpecial.charAt(Math.floor(Math.random()*numSpecial.length + 1))
+
+      }
+      //for lowercase, uppercase and numeric only
+      else if((pwLowercase==true && pwUppercase==true && pwNumbers==true && pwSpecialChar!==true)){
+        password += lowerUpperNum.charAt(Math.floor(Math.random()*lowerUpperNum.length + 1))
+
+      }
+      //for lowercase, uppercase and special characters only
+      else if((pwLowercase==true && pwUppercase==true && pwNumbers!==true && pwSpecialChar==true)){
+        password += lowerUpperSpecial.charAt(Math.floor(Math.random()*lowerUpperSpecial.length + 1))
+
+      }
+      //for uppercase, numeric and special characters only
+      else if((pwLowercase!==true && pwUppercase==true && pwNumbers==true && pwSpecialChar==true)){
+        password += upperNumSpecial.charAt(Math.floor(Math.random()*upperNumSpecial.length + 1))
+
+      }
+      //for all characters
+      else if((pwLowercase==true && pwUppercase==true && pwNumbers==true && pwSpecialChar==true)){
+        password += allChar.charAt(Math.floor(Math.random()*allChar.length + 1))
+
+      }
+
     }return password;
 
   }
