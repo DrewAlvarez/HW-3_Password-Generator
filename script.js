@@ -25,11 +25,12 @@ function writePassword() {
   passwordText.value = password;
 
   function generatePassword(){
-    lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
-    for (var i = 1; i < pwLength; i++){
+    var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
+    var password ="";
+    for (var i = 1; i <= pwLength; i++){
       password += lowerCaseChar.charAt(Math.floor(Math.random()*lowerCaseChar.length + 1))
       
-    }return password
+    }return password;
 
   }
   
