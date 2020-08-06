@@ -23,13 +23,32 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  
   function generatePassword(){
     var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
+    var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var numericChar = "0123456789";
+    var specialChar = "!@#$%^&*()_+-`~";
+    var lowerUpper = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lowerNum = "abcdefghijklmnopqrstuvwxyz0123456789";
+    var lowerSpecial = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-`~";
+    var upperNum = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    var upperSpecial = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-`~";
+    var numSpecial = "0123456789!@#$%^&*()_+-`~";
+    var lowerUpperNum = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    var lowerUpperSpecial = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-`~";
+    var upperNumSpecial = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-`~";
+    var allChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-`~";
+    
     var password ="";
     for (var i = 1; i <= pwLength; i++){
-      password += lowerCaseChar.charAt(Math.floor(Math.random()*lowerCaseChar.length + 1))
-      
+      if(pwLowercase==true && pwUppercase!==true && pwNumbers!==true && pwSpecialChar!== true){
+        password += lowerCaseChar.charAt(Math.floor(Math.random()*lowerCaseChar.length + 1))
+
+      }else if((pwLowercase!==true && pwUppercase==true && pwNumbers!==true && pwSpecialChar!== true)){
+        password += upperCaseChar.charAt(Math.floor(Math.random()*upperCaseChar.length + 1))
+
+      }
     }return password;
 
   }
